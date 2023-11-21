@@ -1,0 +1,99 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    min-height: 100px;
+    top: 50px;
+}
+
+#input-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 80%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.add-btn {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 10%;
+    padding: 10px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+ul li {
+    position: relative;
+    background-color:transparent;
+    width: 100%;
+    margin: auto;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 900;
+    animation: slide 2s;
+    
+}
+@keyframes slide{
+  from{
+    
+  }
+}
+
+
+
+span {
+    display: flex;
+    float: right;
+    color: aliceblue;
+}
+
+#list {
+    position: absolute;
+    top: 100px;
+    background-color:transparent;
+    width: 80%;
+}
+
+.close button {
+    font-size: large;
+    border-radius: 20px;
+    padding: auto;
+    background-color: black;
+    color: white;
+
+}
+
+.checked {
+    background-color: aqua;
+    text-decoration: line-through;
+}
+
+body {
+    background-image: radial-gradient(red, blue, black);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+}

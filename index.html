@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <input id="input-box" type="text" placeholder="add your text">
+        <button class="add-btn" onclick="add()">add</button>
+        <ul id="list">
+
+        </ul>
+    </div>
+    <script>
+        function add() {
+            let input = document.getElementById("input-box");
+            let list = document.getElementById("list");
+
+            if (input.value === '') {
+                alert("Add something");
+            } else {
+                let li = document.createElement("li");
+                li.innerHTML = input.value;
+                list.appendChild(li);
+
+                let span = document.createElement("span");
+                span.innerHTML = "<button>delete</button>";
+                li.appendChild(span);
+                span.className = "close";
+            }
+
+            input.value = "";
+            savedata();
+            color();
+
+        }
+        let a = document.querySelector('#list');
+        a.addEventListener('click', function (e) {
+            if (e.target.tagName === 'LI') {
+                e.target.classList.toggle('checked');
+                savedata();
+            }
+            else if (e.target.tagName === 'BUTTON') {
+               let del= e.target.parentElement.parentElement;
+               list.removeChild(del)
+            }
+            savedata();
+
+        })
+        function savedata() {
+            localStorage.setItem('data', list.innerHTML)
+        }
+        function showdata() {
+            list.innerHTML = localStorage.getItem("data")
+        }
+        showdata();
+        let input = document.getElementById("input-box");
+        input.addEventListener('keypress', function (e) {
+            if (e.key === "Enter") {
+                add();
+            }
+
+        })
+        function color(){
+            const a=['red','white','yellow','green','grey','orangered']
+            var pos=Math.floor(Math.random() * 7);
+           let change=document.querySelector('#list');
+           change.style.color=a[pos];
+           console.log(a[pos])
+        }
+    </script>
+    </div>
+</body>
+
+</html>
